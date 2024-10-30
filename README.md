@@ -40,6 +40,6 @@ The following key modules/pages are automated:
 ```bash
   npm i mochawesome-report-generator
 ```
-#### Here is the Summary report:
+#### Here is the Test report:
 ![Screenshot 2024-10-31 045229](https://github.com/user-attachments/assets/52387f69-d65a-43ca-af7a-d30c669ed34c)
 

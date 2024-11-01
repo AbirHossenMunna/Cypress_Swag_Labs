@@ -1,13 +1,19 @@
 import AddToCart from "../pages/AddToCart";
-import LoginPage from "../pages/LoginPage"
+import LoginPage from "../pages/LoginPage";
+import Utils from "../pages/Utils";
 
 describe("Adding product to AddToCart",()=>{
     const loginPage = new LoginPage();
     const addtoCart = new AddToCart();
+    const utils = new Utils();
 
     beforeEach(()=>{
-        loginPage.userLogin("standard_user","secret_sauce");
+      utils.getAdminCreds(1); // Get valid user credentials
+      cy.wrap(null).then(() => {
+          loginPage.userLogin(utils.getUsername(), utils.getPassword());
+      });
     })
+    
     it("Single product add to cart",()=>{
        addtoCart.userInDashboard();
        addtoCart.viewProduct();
